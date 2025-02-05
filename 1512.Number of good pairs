@@ -1,0 +1,35 @@
+QUESTION NUMBER : 1512    NUMBER OF GOOD PAIRS
+
+SOLUTION :
+
+class Solution {
+public:
+        int numIdenticalPairs(vector<int>& A) {
+        int sol = 0;
+        unordered_map<int, int> count;
+        for (int x: A) {
+        sol += count[x]++;
+        }
+        return sol;
+    }
+};
+
+
+
+Intution :
+* we have to count the occurrence of the same elements
+with A[i] == A[j] and i < j
+
+Approach:
+
+1. We will intiliaze ans with 0 and an empty unordered map to store the occurrence of the element
+2. For each element in the given array:
+3. Here there will be 2 cases :
+    (i)  if element/number is present in the map that means for example at any time in unordered map we saw count of num(element) 1 is 2 thats means currunt element can form 2 pair with previous 1, so at that time we will add this count in answer and also increase the count of the element in out map
+    (ii) If element/number is not present in the map, it means this is the first time we're seeing this number, so we initialize its count to 1.
+4. At last we will return our answer
+
+Complexity :
+
+Time complexity : O(N)
+Space complexity : O(N)
