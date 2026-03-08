@@ -5,6 +5,8 @@ public:
         int maxfreq=0;
         int res=0;
 
+        if(nums.size()==0)return 0;
+
         for(auto x:nums){
             freq[x]++;
         }
