@@ -1,19 +1,19 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        sort(s.begin(),s.end());
-        sort(t.begin(),t.end());
-
-        if(s.length() !=t.length()){
+        if(s.size() != t.size()){
             return false;
         }
-
-        for(int i=0;i<s.length();i++){
-            if(s[i] != t[i]){
-                return false;
-            }
+        vector<int>frequency(26,0);
+        for(char c:s){
+            frequency[c-'a']++;
         }
-        return true;
-        
+        for(char c:t){
+            frequency[c-'a']--;
+        }
+        for(int i:frequency){
+            if(i!=0) return false;
+        }
+        return true;      
     }
 };
