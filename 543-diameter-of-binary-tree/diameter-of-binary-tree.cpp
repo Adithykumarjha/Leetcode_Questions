@@ -19,7 +19,7 @@ int maxdiameter=0;
 
     }
 
-    int subDiameter(TreeNode * root){
+   private: int subDiameter(TreeNode * root){
         if(root==NULL){
             return 0 ;
         }
