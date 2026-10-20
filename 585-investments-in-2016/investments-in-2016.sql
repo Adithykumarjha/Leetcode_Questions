@@ -7,8 +7,7 @@ WHERE tiv_2015 IN (
     GROUP BY tiv_2015
     HAVING COUNT(*)>1
 )
-AND
-(lat,lon) IN (
+AND (lat,lon) IN (
     SELECT lat,lon 
     FROM Insurance
     GROUP BY lat,lon
